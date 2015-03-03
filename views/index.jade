@@ -1,0 +1,16 @@
+doctype
+html(lang="en")
+head
+  meta(charset="UTF-8")
+  title Document
+body
+  ul
+    each todo in todos
+      li.todo
+        input(type="checkbox")
+        h3= todo.title
+        p= todo.description
+        form(action="/todos/#{todo._id}?_method=DELETE", method="POST")        
+          button X
+  a(href="/new_todo")
+    button new

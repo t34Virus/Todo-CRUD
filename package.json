@@ -1,0 +1,23 @@
+{
+  "name": "Todo-CRUD",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/treindle/Todo-CRUD.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/treindle/Todo-CRUD/issues"
+  },
+  "homepage": "https://github.com/treindle/Todo-CRUD",
+  "dependencies": {
+    "express": "^4.12.1",
+    "jade": "^1.9.2"
+  }
+}
