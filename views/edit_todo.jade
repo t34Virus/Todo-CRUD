@@ -1,0 +1,15 @@
+extends ./layout/application.jade
+
+block content
+  .edit_content
+    form(action="/todos/#{todo._id}?_method=PUT", method="POST")
+      .field
+        h1 title:    
+          input(type="text", name="title", value=todo.title)
+      .field_description
+        h1 description:    
+          textarea(type="text", name="description", value=todo.description)
+            =todo.description
+      .field
+        button
+    h1!= todo.description

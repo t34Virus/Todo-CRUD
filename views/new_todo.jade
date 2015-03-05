@@ -1,14 +1,11 @@
 extends ./layout/application.jade
 
 block content
-  form(action="/todos", method="post")
+  form.new(action="/todos", method="post")
     label(for="form_title") Title
     input(type="text", name="title", id="form_title")
     br
     label(for="description") Description
     textarea#description(name="description")
-    hr
-    //- input(type="checkbox", name="is_done")
-    //- label(for="is_done") complete
-    //- br
-    button save
+    br
+    button 

@@ -3,14 +3,26 @@ html(lang="en")
 head
   meta(charset="UTF-8")
   title Document
+  link(rel='stylesheet', href='/css/styles.css')
 body
-  ul
-    each todo in todos
-      li.todo
-        input(type="checkbox")
-        h3= todo.title
-        p= todo.description
-        form(action="/todos/#{todo._id}?_method=DELETE", method="POST")        
-          button X
-  a(href="/new_todo")
-    button new
+  block content
+    h1#list
+      span To-Do-List
+      a(href="/new_todo")
+        button
+    .container
+      ul
+        each todo in todos
+          li
+            .todo
+              input(type="checkbox", data-todo-id="#{todo._id}", data-completed="#{todo.is_done}")
+              form.delete(action="/todos/#{todo._id}?_method=DELETE", method="POST")
+                button.remove  
+              a(href="/todos/#{todo._id}")
+                h2!= todo.title
+              br
+              a(href="/todos/#{todo._id}")
+                p!= todo.description
+                  //- h4!=todo.title
+    script(text='text/javascript', src='http://code.jquery.com/jquery-1.6.3.min.js')
+    script(src='/js/app.js')

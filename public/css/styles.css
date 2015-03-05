@@ -1,0 +1,166 @@
+@import url(http://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here);
+
+html {
+  font-family: 'Just Me Again Down Here', cursive;
+
+}
+
+body {
+  background-image: url("/images/motivation2.png");
+  background-size: content;
+  background-attachment: fixed;
+  margin: 30px;
+  background-repeat: no-repeat;
+}
+
+header {
+  text-align: center;
+  position: fixed;
+  margin-left: 420px;
+  margin-top: -40px;
+}
+
+span {
+  font-size: 58px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
+
+#logo button {
+  margin-top: 30px;
+  margin-right: 30px;
+  background-image: url("/images/back button.png");
+  height: 70px;
+  width: 70px;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+}
+
+.new {
+  text-align: center;
+  /*margin: auto;*/
+  margin-top: 150px;
+  margin-left: 300px;
+  position: fixed;
+}
+.new label {
+  font-size: 50px;
+  margin-right: 30px;
+}
+
+.new input {
+  margin-right: -90px;
+  margin-bottom: 50px;
+  height: 100px;
+  width: 400px;
+  font-size: 30px;
+  font-family: 'Just Me Again Down Here', cursive;
+
+}
+
+.new textarea {
+  font-size: 30px;
+  font-family: 'Just Me Again Down Here', cursive;
+  height: 200px; 
+  width: 400px;
+}
+#list {
+  text-align: center;
+}
+#list button {
+  margin-top: 30px;
+  background-image: url("/images/new button.png");
+  height: 70px;
+  width: 70px;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+
+}
+
+.new button, .field button {
+  background-image: url("/images/check button.png");
+  height: 70px;
+  width: 70px;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+
+}
+
+.container {
+  overflow: auto;
+  height: 590px;
+  width: 60%;
+  margin: auto;
+  margin-top: 30px;
+  margin-left: 250px;
+  position: fixed;
+}
+.todo {
+  display: inline-block;
+  width: 90%;
+  display: block;
+}
+
+li {
+  list-style-type: none;
+  border-bottom: yellow solid 2px;
+  margin-bottom: 20px;
+  margin-right: 40px;
+}
+.todo p img {
+  width: 90%;
+}
+
+a{
+  display: inline-block;
+}
+.delete {
+  display: inline-block;
+  float: right;
+}
+
+.remove {
+  padding-top: 20px;
+  background-image: url("/images/delete.png");
+  height: 70px;
+  width: 70px;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+}
+.edit_content {
+  text-align: center;
+  position: fixed;
+  margin-top: 150px;
+  margin-left: 230px; 
+  overflow: auto;
+  height: 590px;
+  width: 60%;
+}
+
+.field h1 {
+  font-size: 50px;
+}
+
+.field input {
+  margin-right: -90px;
+  height: 100px;
+  width: 400px;
+  font-size: 30px;
+  font-family: 'Just Me Again Down Here', cursive;
+
+}
+
+.field_description textarea {
+  font-size: 30px;
+  font-family: 'Just Me Again Down Here', cursive;
+  height: 100px; 
+  width: 400px;
+}
+
+.field_description h1 {
+  font-size: 50px;
+}

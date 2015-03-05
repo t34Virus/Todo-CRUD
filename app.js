@@ -17,7 +17,7 @@ var todo = new Schema({
 var Todo = mongoose.model('Todo', todo);
 
 // serves static assets
-app.use(express.static(__dirname + 'public/'));
+app.use(express.static(__dirname + '/public'));
 app.use(methodOverride('_method'));
 // parse application/x-www-form-urlencoded 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -38,6 +38,13 @@ app.get('/', function (req, res) {
     res.render('index', {todos: todosFromDB });  
   });
 });
+app.get('/todos/:id', function (req, res) {
+  Todo.findOne({_id:req.params.id},
+    function(err, todo){
+    if (err) throw err;
+    res.render('edit_todo', {todo: todo });  
+  });
+});
 //delete todo
 app.delete('/todos/:id', function (req, res) {
   Todo.remove({_id:req.params.id},
@@ -45,7 +52,6 @@ app.delete('/todos/:id', function (req, res) {
   res.redirect('/');  
   });
 });
-  console.log(todo);
 app.get('/new_todo', function (req, res) {
   res.render('new_todo');  
 });
@@ -65,11 +71,17 @@ app.post('/todos', function (req, res) {
 });
 
 app.put('/todos/:id/complete', function (req, res) {
-  res.send('PUT');  
+  Todo.update({_id:req.params.id},
+    { $set: {is_done : true }}, function (err, todo){
+    res.send('success');  
+  });
 });
 
 app.put('/todos/:id/incomplete', function (req, res) {
-  res.send('PUT');  
+  Todo.update({_id:req.params.id},
+    { $set: {is_done : false }}, function (err, todo){
+      res.send('success');  
+  });  
 });
 
 //edit todo
@@ -78,12 +90,14 @@ app.put('/todos/:id', function (req, res) {
     { title: req.body.title,
       description: req.body.description
     }, function (err, todo){
-    res.render('/');  
+    res.redirect('/');  
   });
 });
 
-app.put('/todos:id', function (req, res) {
-  res.send('PUT');  
+app.get('/todos', function(req,res){
+  Todo.find(function(err, todos){
+    res.render('list', {todos: todos});
+  });
 });
 
 var db = mongoose.connection;
