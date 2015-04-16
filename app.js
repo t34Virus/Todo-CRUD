@@ -4,7 +4,7 @@ var app = express();
 var methodOverride = require('method-override');
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/todo_test');
+mongoose.connect('mongodb://admin:'+process.env.DBPASS+'@ds031571.mongolab.com:31571/tech_women');
 var Schema = mongoose.Schema;
 
 var todo = new Schema({
